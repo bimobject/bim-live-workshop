@@ -1,6 +1,6 @@
 # BIM Live API Workshop
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
+This project is built with Angular and NodeJS.
 
 ## Introduction
 
@@ -30,3 +30,8 @@ In order to make the workshop more efficient we want to ask you to prepare a cou
   (if you do any changes to the code in the `src/app` folder, just reload your browser).
 
   Now you can access the site by navigating to http://localhost:9090
+
+## Disclaimer
+
+This code is not regarded in anyway as production ready, it is a project intended to be used in this Workshop.
+However, all code is free to use and modify as you want.
