@@ -1,27 +1,32 @@
-# BimLiveWorkshop
+# BIM Live API Workshop
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
 
-## Development server
+## Introduction
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Welcome to BIM Live API Workshop! This is the advanced session where we together (after a presentation) will try to go through
+the code and talk about some pitfalls when it comes to implementing the API.
 
-## Code scaffolding
+## Preparation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+In order to make the workshop more efficient we want to ask you to prepare a couple of things.
 
-## Build
+* Make sure you have an account on https://www.bimobject.com and have requested access to become a developer on https://developer.bimobject.com, mark your request with "BIM LIVE WORKSHOP" or something similair.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* Download this reposotory, either by using `git` or by simply downloading it from [github](https://github.com/bimobject/bim-live-workshop/archive/master.zip).
 
-## Running unit tests
+* Have [NodeJS](www.nodejs.org) installed (`npm` comes with it)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* In the root of this project, run `npm install` in a terminal
 
-## Running end-to-end tests
+* Any question? Please come a bit earlier to the workshop and I'll try to help you out.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Developing
 
-## Further help
+* Open two terminals:
+  * run `yarn start` in one (this will launch the server)
+   (if you do any changes to the code in the `server/` folder, restart the app by pressing CTRL+C)
+  * run `yarn watch` in the other (this will build the front end and watch any changes)
+  (if you do any changes to the code in the `src/app` folder, just reload your browser).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  Now you can access the site by navigating to http://localhost:9090
