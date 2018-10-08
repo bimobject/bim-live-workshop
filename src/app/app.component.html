@@ -1,0 +1,29 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="assets/logo.svg">
+</div>
+<div class="container" *ngIf="loggedIn">
+  <span>
+    <input type="search" [(ngModel)]="searchText" placeholder="Search for..." />
+    <button type="submit" (click)="search()">Search</button>
+  </span>
+  <div class="spinner" *ngIf="loading">
+    <img src="assets/spinner.gif" />
+  </div>
+
+  <div class="results" *ngIf="results && !loading">
+    <div class="result-item" *ngFor="let result of results">
+      {{result.name}}
+    </div>
+  </div>
+  <div *ngIf="error">
+    And error happened: {{error}}
+  </div>
+</div>
+
+<div class="container" *ngIf="!loggedIn">
+  You are not logged in.
+  <button (click)="login()">Login</button>
+</div>
