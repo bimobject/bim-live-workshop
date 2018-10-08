@@ -5,7 +5,6 @@ const randomBytes = crypto.randomBytes(32);
 
 const verifier = base64url(randomBytes.toString('ascii'));
 const codeChallenge = base64url(crypto.createHash('sha256').update(verifier).digest());
-console.log('my code challange', codeChallenge);
 module.exports = {
   verifier: verifier,
   codeChallenge: codeChallenge

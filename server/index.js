@@ -9,10 +9,10 @@ const request = require('request');
 */
 const options = {
   authorizationCodeFlow: {
-    client_id: 'LMGlQfPR6pBhdASg6TPjmFzesyBIlwJR',
-    client_secret: 'yDrocqE6R6Iif7u7phiXlMIIloEb7JDUNpmlwm01zjIY9yp0rUEm1VmgiJ6xbZbx',
-    redirect_uri: 'http://localhost:9090/login',
-    scope: 'search_api search_api_downloadbinary '
+    client_id: '',
+    client_secret: '',
+    redirect_uri: '',
+    scope: ''
   }
 }
 
