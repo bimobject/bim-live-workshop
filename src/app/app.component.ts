@@ -51,8 +51,8 @@ export class AppComponent implements OnInit {
     this.loadingSearchResults = true;
     // Call the service to do the request to our server
     this.api.searchProduct(this.searchText).subscribe((response) => {
+      console.log('Result of search products', response);
       this.results = response.data;
-      console.log(this.results);
       this.loadingSearchResults = false;
     }, (err) => {
       console.log(err);
@@ -70,7 +70,7 @@ export class AppComponent implements OnInit {
     this.loadingProduct = true;
     console.log();
     this.api.getProductInfo(this.clickedProductId).subscribe((response) => {
-      console.log(response);
+      console.log('Result of more info', response);
       this.product = response.data;
       this.loadingProduct = false;
     }, (err) => {
@@ -83,9 +83,9 @@ export class AppComponent implements OnInit {
   downloadFile() {
     const file = this.findFirstBestRfa();
     this.api.downloadFile(this.clickedProductId, file.id).subscribe((response) => {
+      console.log('Downloaded file', response);
       const blob = new Blob([response]);
       saveAs(blob, file.name);
-      console.log('the file?', response);
     }, (err) => {
       console.log(err);
       this.loadingProduct = false;
