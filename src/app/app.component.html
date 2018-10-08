@@ -25,20 +25,18 @@
 
   <div class="results" *ngIf="results && !loadingSearchResults">
     <div class="result-item" *ngFor="let result of results">
-      <div (click)="getMoreInfo(result.id)">
-        <div>
-          <img src="{{result.imageUrl}}" />
-        </div>
-        <div class="name-brand-text">
-          {{result.name}} - <i>{{result.brand.name}}</i>
-        </div>
+      <div>
+        <img src="{{result.imageUrl}}" (click)="getMoreInfo(result)"/>
+      </div>
+      <div class="name-brand-text">
+        {{result.name}} - <i>{{result.brand.name}}</i>
+      </div>
 
-        <div class="product-spinner" *ngIf="clickedProductId === result.id && loadingProduct">
-          <img class="product-spinner-img" src="assets/spinner.gif" />
-        </div>
-        <div class="download-btn" *ngIf="product.id === result.id">
-          <button (click)="download(result.id)">Download</button>
-        </div>
+      <div class="product-spinner" *ngIf="clickedProductId === result.id && loadingProduct">
+        <img class="product-spinner-img" src="assets/spinner.gif" />
+      </div>
+      <div class="download-btn" *ngIf="clickedProductId === result.id && !loadingProduct">
+        <button (click)="downloadFile()">Download</button>
       </div>
     </div>
   </div>

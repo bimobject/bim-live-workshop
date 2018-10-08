@@ -20,8 +20,8 @@ export class ApiService {
     return this.http.get(this.url + 'products', { params: httpParams });
   }
 
-  downloadProduct(productId): Observable<any> {
-    return this.http.get(this.url + 'download/' + productId);
+  downloadFile(productId, fileId): Observable<any> {
+    return this.http.get(this.url + 'download/' + productId + '/' + fileId, {responseType: 'blob'});
   }
 
   // Since we want the server to do the auth things, get the Url from there to.
