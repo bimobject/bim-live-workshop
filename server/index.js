@@ -16,8 +16,7 @@ const options = {
   }
 }
 
-const bimApi = require('bim-api-sdk')(options);
-console.log(bimApi)
+const bimApi = require('./bim-api-sdk')(options);
 
 require('./auth.route')(app, bimApi);
 app.use(bodyParser.json());
@@ -32,7 +31,14 @@ app.get('/api/authenticated', (req, res) => {
 
 app.get('/api/products', (req, res) => {
   console.log('REQUEST: Search products', req.query.fullText);
-  sendSearchRequest(req.query.fullText).then(response => {
+  sendSearchRequest('products?filter.fullText='+req.query.fullText).then(response => {
+    res.send(response)
+  })
+});
+
+app.get('/api/product/:id', (req, res) => {
+  console.log('REQUEST: More info on product with id', req.params['id']);
+  sendSearchRequest('products/'+req.params['id']).then(response => {
     res.send(response)
   })
 });
@@ -54,10 +60,10 @@ app.listen(9090, '0.0.0.0', () => {
   console.log('Your dev server is running on http://localhost:9090');
 });
 
-const sendSearchRequest = (searchText) => {
+const sendSearchRequest = (_request) => {
   return new Promise((resolve, reject) => {
     const options = {
-      uri: 'https://api.bimobject.com/search/v1/products?filter.fullText='+searchText,
+      uri: 'https://api.bimobject.com/search/v1/'+_request,
       method: 'GET',
       headers: {
         Authorization: 'Bearer ' + bimApi.getAuthorizationCodeFlowToken()

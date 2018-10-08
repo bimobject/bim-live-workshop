@@ -1,6 +1,46 @@
 .container {
-  max-width:800px;
+  max-width: 980px;
   margin: 100px auto;
   height: 100%;
-  text-align:center;
+  text-align: center;
+}
+
+.results {
+  margin-top: 50px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+
+  .result-item {
+    position: relative;
+    margin: 40px;
+    border: 1px solid #eee;
+    padding: 10px;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 7px 7px 5px -5px rgba(194,184,194,0.98);
+    }
+  }
+}
+
+.name-brand-text {
+  max-width: 200px;
+  word-wrap: break-word;
+}
+
+.product-spinner {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.product-spinner-img {
+  width: 50px;
+}
+
+.download-btn {
+  margin-top: 10px;
 }
