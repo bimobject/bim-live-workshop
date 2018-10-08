@@ -73,7 +73,7 @@ const sendSearchRequest = (_request) => {
         Authorization: 'Bearer ' + bimApi.getAuthorizationCodeFlowToken()
       }
     }
-    console.log(options.uri)
+    console.log('GET Requesting', options.uri)
     request(options, (err, response, body) => {
       console.log(response.headers)
       if (err) {

@@ -20,7 +20,13 @@ export class ApiService {
     return this.http.get(this.url + 'products', { params: httpParams });
   }
 
+  getProductInfo(id): Observable<any> {
+    // Get information from a single product
+    return this.http.get(this.url + 'product/' + id);
+  }
+
   downloadFile(productId, fileId): Observable<any> {
+    // Response type has to be blob (Binary Large OBject)
     return this.http.get(this.url + 'download/' + productId + '/' + fileId, {responseType: 'blob'});
   }
 
@@ -35,7 +41,4 @@ export class ApiService {
     return this.http.get(this.url + 'authenticated/');
   }
 
-  getProductInfo(id): Observable<any> {
-    return this.http.get(this.url + 'product/' + id);
-  }
 }
